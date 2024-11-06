@@ -15,7 +15,7 @@ Content-Type: application/json
 
 
 ### Get a job ad by id
-GET {{host}}/ads/{{createJobAd.response.body.id}}
+GET {{host}}/ads/1
 
 ### Update job ad text
 PATCH {{host}}/ads/{{createJobAd.response.body.id}}
