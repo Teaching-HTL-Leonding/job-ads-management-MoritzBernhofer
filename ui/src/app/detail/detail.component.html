@@ -1,2 +1,17 @@
-<p>detail-page works!</p>
-<h1>number: {{ id }}</h1>
+<h1> Job Detail </h1>
+
+<h2 [contentEditable]="edit()" (blur)="editTitle($event)" >title {{ job()?.title }}</h2>
+
+<div [contentEditable]="edit()" (blur)="editTranslation($event)" >English Translation: {{ job()?.textEN }}</div>
+
+@for (translation of job()?.translations; track translation) {
+  <div class="language">{{ translation.language }}</div>
+  <div class="translatedText">{{ translation.translatedText }}</div>
+}
+
+
+@if (edit()) {
+  <button (click)="submitEdit(); edit.set(false)">submit edit</button>
+} @else {
+  <button (click)="edit.set(true)">edit</button>
+}

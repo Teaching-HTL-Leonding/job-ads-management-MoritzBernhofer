@@ -16,9 +16,9 @@ import {RouterLink} from '@angular/router';
 export class JobAdsComponent {
   ads = signal<Ad[] | undefined>(undefined);
 
-  private AdService = inject(AdService);
+  private adService = inject(AdService);
 
   async ngOnInit() {
-    this.ads.set(await this.AdService.getAds());
+    this.ads.set(await this.adService.getAds());
   }
 }
